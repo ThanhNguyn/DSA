@@ -9,3 +9,10 @@ int giaithua(int n){
     return gt;
 }
 
+int main(){
+    int n;
+    cin >> n;
+    cout << giaithua(n);
+    return 0;
+}
+
