@@ -1,2 +1,76 @@
+# ===== C/C++ build output - ap dung cho CA THU MUC CON =====
 *.exe
-.vscode
+**/*.exe
+*.out
+**/*.out
+*.app
+*.o
+**/*.o
+*.obj
+**/*.obj
+*.a
+*.lib
+*.so
+*.dll
+*.dylib
+*.pdb
+**/*.pdb
+*.ilk
+*.exp
+*.gch
+*.pch
+*.dSYM/
+**/*.dSYM/
+*.suo
+*.user
+
+# ===== Build folders - chan o moi cap thu muc =====
+build/
+**/build/
+cmake-build-*/
+**/cmake-build-*/
+CMakeFiles/
+**/CMakeFiles/
+CMakeCache.txt
+**/CMakeCache.txt
+cmake_install.cmake
+Testing/
+**/Testing/
+_deps/
+**/_deps/
+
+# ===== VS Code - de o thu muc tong, ap dung cho previousweek/ week4/ =====
+.vscode/
+**/.vscode/
+*.code-workspace
+**/*.code-workspace
+
+# ===== Visual Studio / JetBrains =====
+.vs/
+**/.vs/
+.idea/
+**/.idea/
+*.vcxproj.user
+**/*.vcxproj.user
+
+# ===== Rac OS - Windows / macOS / Linux =====
+.DS_Store
+**/.DS_Store
+Thumbs.db
+**/Thumbs.db
+Desktop.ini
+**/Desktop.ini
+*.lnk
+
+# ===== File tam / backup / log =====
+*.tmp
+**/*.tmp
+*.temp
+*.log
+**/*.log
+*.bak
+**/*.bak
+*.swp
+*.swo
+*~
+*.orig
