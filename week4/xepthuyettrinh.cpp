@@ -7,7 +7,7 @@ string name[n]= {"AN", "Binh", "Chi", "Dung"};
 
 string pos[n];
 
-bool used[n] = {false}; //<bool> used(n, false);
+bool used[n] = {false}; //vector<bool> used(n, false);
 
 
 bool check(int slot, int nameIndex){
