@@ -43,7 +43,8 @@ int count(Tree root)
 
 int countLeaves(Tree root)
 {
-
+    if (root == nullptr)
+        return 0;
     if (root->pLeft == nullptr && root->pRight == nullptr)
         return 1;
     return countLeaves(root->pLeft) + countLeaves(root->pRight);
