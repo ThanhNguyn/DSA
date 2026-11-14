@@ -19,7 +19,6 @@ void Try(int i)
         {
             Try(i + 1);
         }
-        cout << "\n";
     }
 }
 
