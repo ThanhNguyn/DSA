@@ -34,6 +34,15 @@ void RLN(Tree root)
     cout << root->data << " ";
 };
 
+void LNR(Tree root)
+{
+    if (root == nullptr)
+        return;
+    LNR(root->pLeft);
+    cout << root->data << " ";
+    LNR(root->pRight);
+}
+
 int count(Tree root)
 {
     if (root == nullptr)
@@ -56,6 +65,63 @@ int height(Tree root)
         return 0;
     return 1 + max(height(root->pLeft), height(root->pRight));
 }
+
+TNode *searchNode(Tree root, int dt)
+{
+    if (root == nullptr)
+        return nullptr;
+    if (root->data == dt)
+        return root;
+    if (root->data > dt)
+        return searchNode(root->pLeft, dt);
+    return searchNode(root->pRight, dt);
+}
+
+bool insertNode(Tree &root, int dt)
+{
+    if (root == nullptr)
+    {
+        root = new TNode(dt);
+        return 1;
+    }
+    if (root->data == dt)
+        return 0;
+    if (root->data > dt)
+        return insertNode(root->pLeft, dt);
+    return insertNode(root->pRight, dt);
+}
+
+bool removeNode(Tree &root, int dt)
+{
+    if (root == nullptr)
+        return 0;
+    if (root->data > dt)
+        return removeNode(root->pLeft, dt);
+    if (root->data < dt)
+        return removeNode(root->pRight, dt);
+
+    if (root->pLeft == nullptr)
+    {
+        TNode *temp = root;
+        root = root->pRight;
+        delete temp;
+        return 1;
+    }
+    if (root->pRight == nullptr)
+    {
+        TNode *temp = root;
+        root = root->pLeft;
+        delete temp;
+        return 1;
+    }
+    TNode *successor = root->pRight;
+    while (successor->pLeft != nullptr)
+    {
+        successor = successor->pLeft;
+    }
+    root->data = successor->data;
+    return removeNode(root->pRight, dt);
+}
 int main()
 {
     root->pLeft = new TNode(3);
@@ -73,5 +139,16 @@ int main()
     cout << count(root) << "\n";
     cout << countLeaves(root) << "\n";
     cout << height(root);
+    TNode *ans = searchNode(root, 7);
+    if (ans == nullptr)
+    {
+        cout << "\nKo tim thay gia tri";
+    }
+    else
+        cout << "\nTim thay gia tri" << endl;
+    insertNode(root, 2);
+    cout << "\n";
+    LNR(root);
+    removeNode(root, 3);
     return 0;
 }
