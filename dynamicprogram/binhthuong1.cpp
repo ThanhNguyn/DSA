@@ -12,7 +12,7 @@ int main()
     {
         for (int j = i; j <= n; j++)
         {
-            dp[j] += dp[j - 1];
+            dp[j] += dp[j - i];
         }
     }
     cout << dp[n];
